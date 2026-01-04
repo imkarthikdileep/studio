@@ -6,14 +6,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Link from "next/link";
-import { useFormState } from "react-dom";
+import { useActionState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { useEffect } from "react";
 import { handleFormSubmit } from "@/app/actions/contact";
 
 export function ContactSection() {
     const { toast } = useToast();
-    const [state, formAction] = useFormState(handleFormSubmit, {
+    const [state, formAction] = useActionState(handleFormSubmit, {
         success: false,
         message: "",
     });
