@@ -1,15 +1,15 @@
 import Image from "next/image";
 
 const clients = [
-  { name: "Oil Field Supply Centre.", logo: "/clients/oil-field.png" },
-  { name: "Lamprell", logo: "/clients/lamprell.png" },
-  { name: "McDermott", logo: "/clients/mcdermott.png" },
+  { name: "Oil Field Supply Centre.", logo: "/clients/Oilfields.png" },
+  { name: "Lamprell", logo: "/clients/Lamprell.png" },
+  { name: "McDermott", logo: "/clients/mcdermott(transparent).png" },
   { name: "Fabtech", logo: "/clients/fabtech.png" },
-  { name: "Hidayath Heavy Industry", logo: "/clients/hidayath.png" },
-  { name: "Mai Dubai", logo: "/clients/mai-dubai.png" },
-  { name: "INCO International FZC", logo: "/clients/inco.png" },
+  { name: "Hidayath Heavy Industry", logo: "/clients/Hidayath.png" },
+  { name: "Mai Dubai", logo: "/clients/maidubai.png" },
   { name: "PETRONASH", logo: "/clients/petronash.png" },
   { name: "Binghatti", logo: "/clients/binghatti.png" },
+  { name: "DP World Drydocks", logo: "/clients/drydocks-1.png"}
 ];
 
 export function ClientsSection() {
