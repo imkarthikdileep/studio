@@ -28,8 +28,8 @@ export function ClientsSection() {
               <Image
                 src={client.logo}
                 alt={`${client.name} Logo`}
-                width={120}
-                height={60}
+                width={client.name === "DP World Drydocks" ? 150 : 120}
+                height={client.name === "DP World Drydocks" ? 75 : 60}
                 className="object-contain max-h-full max-w-full"
               />
             </div>
