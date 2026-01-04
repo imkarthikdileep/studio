@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Building2, Facebook, Twitter, Linkedin } from "lucide-react";
+import Image from "next/image";
+import { Facebook, Twitter, Linkedin } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,8 +10,8 @@ export function Footer() {
       <div className="container mx-auto px-4 md:px-6 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center gap-2 font-bold text-lg mb-4 md:mb-0">
-            <Building2 className="h-6 w-6" />
-            <span className="font-headline">EmiratiStaff Solutions</span>
+            <Image src="/logo-white.png" alt="Euro Star Logo" width={40} height={40} className="h-10 w-auto" />
+            <span className="font-headline">Euro Star</span>
           </div>
           <div className="flex gap-4">
             <Link href="#" aria-label="Facebook page">
@@ -25,7 +26,7 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t border-primary-foreground/20 mt-6 pt-6 text-center text-sm text-primary-foreground/70">
-          <p>&copy; {currentYear} EmiratiStaff Solutions. All rights reserved.</p>
+          <p>&copy; {currentYear} Euro Star. All rights reserved.</p>
         </div>
       </div>
     </footer>

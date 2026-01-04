@@ -48,7 +48,7 @@ export function ContactSection() {
                         </div>
                         <div className="flex items-center gap-4">
                             <Mail className="h-6 w-6 text-accent" />
-                            <p>contact@emiratisolutions.ae</p>
+                            <p>contact@eurostar.ae</p>
                         </div>
                     </div>
                 </div>

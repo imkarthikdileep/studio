@@ -8,25 +8,25 @@
   }
 
   :root {
-    --background: 220 31% 87%; /* Light desaturated navy */
-    --foreground: 224 55% 15%; /* Darker Navy for text */
-    --card: 220 31% 92%;
-    --card-foreground: 224 55% 15%;
-    --popover: 220 31% 92%;
-    --popover-foreground: 224 55% 15%;
-    --primary: 224 55% 22%; /* Deep Navy */
+    --background: 255 15% 95%; /* Lighter purple-white */
+    --foreground: 255 45% 20%; /* Dark Purple for text */
+    --card: 255 15% 100%;
+    --card-foreground: 255 45% 20%;
+    --popover: 255 15% 100%;
+    --popover-foreground: 255 45% 20%;
+    --primary: 255 45% 30%; /* Deep Purple */
     --primary-foreground: 210 40% 98%;
-    --secondary: 220 20% 80%;
-    --secondary-foreground: 224 55% 22%;
-    --muted: 220 20% 80%;
-    --muted-foreground: 224 55% 45%;
-    --accent: 145 63% 49%; /* Emerald Green */
+    --secondary: 255 15% 90%;
+    --secondary-foreground: 255 45% 30%;
+    --muted: 255 15% 90%;
+    --muted-foreground: 255 45% 45%;
+    --accent: 120 60% 45%; /* Bright Green */
     --accent-foreground: 210 40% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 20% 78%;
-    --input: 220 20% 80%;
-    --ring: 145 63% 49%; /* Emerald Green for focus rings */
+    --border: 255 15% 88%;
+    --input: 255 15% 90%;
+    --ring: 120 60% 45%; /* Bright Green for focus rings */
     --radius: 0.5rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -39,25 +39,25 @@
   }
 
   .dark {
-    --background: 224 55% 10%; /* Very Dark Navy */
-    --foreground: 220 31% 87%; /* Light Desaturated Navy */
-    --card: 224 55% 15%;
-    --card-foreground: 220 31% 87%;
-    --popover: 224 55% 15%;
-    --popover-foreground: 220 31% 87%;
-    --primary: 220 31% 90%;
-    --primary-foreground: 224 55% 10%;
-    --secondary: 224 55% 20%;
-    --secondary-foreground: 220 31% 90%;
-    --muted: 224 55% 20%;
-    --muted-foreground: 220 31% 60%;
-    --accent: 145 63% 49%; /* Emerald Green */
+    --background: 255 45% 10%; /* Very Dark Purple */
+    --foreground: 255 15% 87%; /* Light Purple-white */
+    --card: 255 45% 15%;
+    --card-foreground: 255 15% 87%;
+    --popover: 255 45% 15%;
+    --popover-foreground: 255 15% 87%;
+    --primary: 255 15% 90%;
+    --primary-foreground: 255 45% 10%;
+    --secondary: 255 45% 20%;
+    --secondary-foreground: 255 15% 90%;
+    --muted: 255 45% 20%;
+    --muted-foreground: 255 15% 60%;
+    --accent: 120 60% 45%; /* Bright Green */
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 224 55% 20%;
-    --input: 224 55% 20%;
-    --ring: 145 63% 49%;
+    --border: 255 45% 20%;
+    --input: 255 45% 20%;
+    --ring: 120 60% 45%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;

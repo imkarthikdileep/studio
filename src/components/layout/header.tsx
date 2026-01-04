@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Building2 } from "lucide-react";
+import { Menu } from "lucide-react";
 
 const navLinks = [
   { href: "#services", label: "Services" },
@@ -33,8 +34,8 @@ export function Header() {
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="#" className="flex items-center gap-2 font-bold text-lg text-primary">
-          <Building2 className="h-6 w-6" />
-          <span className="font-headline">EmiratiStaff Solutions</span>
+          <Image src="/logo.png" alt="Euro Star Logo" width={40} height={40} className="h-10 w-auto" />
+          <span className="font-headline">Euro Star</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
@@ -61,8 +62,8 @@ export function Header() {
             <SheetContent side="right">
               <nav className="flex flex-col gap-6 pt-12">
                 <Link href="#" className="flex items-center gap-2 font-bold text-lg text-primary mb-4">
-                  <Building2 className="h-6 w-6" />
-                  <span className="font-headline">EmiratiStaff</span>
+                  <Image src="/logo.png" alt="Euro Star Logo" width={40} height={40} className="h-10 w-auto" />
+                  <span className="font-headline">Euro Star</span>
                 </Link>
                 {navLinks.map((link) => (
                   <Link

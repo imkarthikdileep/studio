@@ -2,7 +2,7 @@ const timelineEvents = [
     {
       year: "2015",
       title: "Foundation",
-      description: "EmiratiStaff Solutions was founded to bridge the gap between talented Emirati professionals and leading UAE companies.",
+      description: "Euro Star was founded to bridge the gap between talented professionals and leading companies.",
     },
     {
       year: "2017",
@@ -12,7 +12,7 @@ const timelineEvents = [
     {
       year: "2019",
       title: "Service Expansion",
-      description: "Expanded our services to include Emiratisation consulting and comprehensive HR outsourcing solutions.",
+      description: "Expanded our services to include consulting and comprehensive HR outsourcing solutions.",
     },
     {
       year: "2021",
@@ -33,7 +33,7 @@ export function AboutSection() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Our Journey of Growth</h2>
             <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">
-              A timeline of our commitment to empowering the national workforce.
+              A timeline of our commitment to excellence.
             </p>
           </div>
           
