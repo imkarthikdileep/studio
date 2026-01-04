@@ -77,17 +77,19 @@ export function ContactSection() {
                 </div>
 
                 <div className="rounded-lg overflow-hidden shadow-lg border group">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.8394939958!2d55.48000931501316!3d25.37688268381304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f58595a7019c9%3A0x83f54519196b0521!2sJurf%20Plaza!5e0!3m2!1sen!2sae!4v1678886000000!5m2!1sen!2sae"
-                        width="100%"
-                        height="450"
-                        style={{ border: 0 }}
-                        allowFullScreen={true}
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                        title="Google Map of Jurf Plaza"
-                        className="w-full h-auto aspect-[4/3] object-cover transition-transform duration-300 group-hover:scale-105"
-                    ></iframe>
+                  <a href="https://www.google.com/maps/search/?api=1&query=25.3936623,55.4629654" target="_blank" rel="noopener noreferrer" className="block relative">
+                      <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.333857502444!2d55.46039047588326!3d25.32650077762744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c35e3b2b489%3A0x33b49add4c56c4d!2sAjman%20Free%20Zone!5e0!3m2!1sen!2sae!4v1719224484920!5m2!1sen!2sae&q=25.3936623,55.4629654"
+                          width="100%"
+                          height="450"
+                          style={{ border: 0 }}
+                          allowFullScreen={true}
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                          title="Google Map of Office Location"
+                          className="w-full h-auto aspect-[4/3] object-cover transition-transform duration-300 group-hover:scale-105 pointer-events-none"
+                      ></iframe>
+                  </a>
                 </div>
             </div>
           </div>
