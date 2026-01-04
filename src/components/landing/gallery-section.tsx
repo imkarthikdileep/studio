@@ -25,12 +25,13 @@ export function GallerySection() {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {galleryImages.map((image, index) => (
-            <div key={index} className="group relative aspect-[4/3] w-full overflow-hidden rounded-lg shadow-lg">
+            <div key={index} className="group overflow-hidden rounded-lg shadow-lg">
               <Image
                 src={image.src}
                 alt={image.alt}
-                fill
-                className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                width={400}
+                height={300}
+                className="w-full h-auto object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
               />
             </div>
           ))}
