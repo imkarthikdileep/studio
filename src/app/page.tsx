@@ -6,6 +6,7 @@ import { AboutSection } from "@/components/landing/about-section";
 import { ClientsSection } from "@/components/landing/clients-section";
 import { ContactSection } from "@/components/landing/contact-section";
 import WhatsAppFab from "@/components/whatsapp-fab";
+import { StatsSection } from "@/components/landing/stats-section";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <HeroSection />
         <ServicesSection />
         <AboutSection />
+        <StatsSection />
         <ClientsSection />
         <ContactSection />
       </main>
