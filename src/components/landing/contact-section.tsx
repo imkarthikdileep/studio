@@ -42,9 +42,13 @@ export function ContactSection() {
                             <Phone className="h-6 w-6 text-accent" />
                             <p>06-5243252</p>
                         </div>
-                        <div className="flex items-center gap-4">
-                            <Mail className="h-6 w-6 text-accent" />
-                            <p>info@eurostaremc.com</p>
+                        <div className="flex items-start gap-4">
+                            <Mail className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
+                            <div className="flex flex-col">
+                                <p>info@eurostaremc.com</p>
+                                <p>Info@kenzuae.com</p>
+                                <p>eurostar014@gmail.com</p>
+                            </div>
                         </div>
                     </div>
                 </div>
