@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import GlassSurface from "@/components/GlassSurface";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -42,19 +43,72 @@ export function ContactSection() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-12 items-start">
-                    <motion.div className="relative overflow-hidden rounded-3xl bg-white/95 border border-slate-100 shadow-sm transition-all duration-500 p-6">
-                        <CardHeader className="p-0 mb-6">
-                            <CardTitle className="font-headline text-primary">Send us a Message</CardTitle>
-                        </CardHeader>
-                        <CardContent className="p-0">
-                            <form action={formAction} className="space-y-4">
-                                <Input name="name" placeholder="Your Name" aria-label="Your Name" required />
-                                <Input name="email" type="email" placeholder="Your Email" aria-label="Your Email" required />
-                                <Textarea name="message" placeholder="Your Message" rows={5} aria-label="Your Message" required />
-                                <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">Send Message</Button>
-                            </form>
-                        </CardContent>
+                <div className="grid md:grid-cols-2 gap-12 items-stretch">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1 }}
+                        className="relative overflow-hidden rounded-[3rem] bg-[#0A192F] border border-white/10 shadow-sm transition-all duration-500 h-full flex flex-col group"
+                    >
+                        {/* Internal Grid Pattern */}
+                        <div
+                            className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.05] transition-transform duration-1000 md:group-hover:scale-110"
+                            style={{
+                                backgroundImage: `
+                                    linear-gradient(to right, #ffffff 1px, transparent 1px),
+                                    linear-gradient(to bottom, #ffffff 1px, transparent 1px)
+                                `,
+                                backgroundSize: '24px 24px'
+                            }}
+                        />
+
+                        <GlassSurface
+                            width="100%"
+                            height="100%"
+                            borderRadius={48}
+                            backgroundOpacity={0.1}
+                            opacity={1}
+                            blur={12}
+                            distortionScale={20}
+                            brightness={100}
+                            borderWidth={0}
+                            mixBlendMode="difference"
+                            enableMagnify={true}
+                            className="h-full"
+                        >
+                            <div className="p-8 md:p-10 flex flex-col h-full w-full relative z-10">
+                                <div className="mb-6">
+                                    <h3 className="font-headline text-2xl font-bold text-white mb-1">Send us a Message</h3>
+                                    <p className="text-slate-400 text-sm">We'll get back to you within 24 hours.</p>
+                                </div>
+
+                                <form action={formAction} className="space-y-4 flex-grow flex flex-col">
+                                    <Input
+                                        name="name"
+                                        placeholder="Your Name"
+                                        aria-label="Your Name"
+                                        required
+                                        className="bg-white/5 border-white/10 text-white placeholder:text-slate-400 focus-visible:ring-accent focus-visible:border-accent h-12"
+                                    />
+                                    <Input
+                                        name="email"
+                                        type="email"
+                                        placeholder="Your Email"
+                                        aria-label="Your Email"
+                                        required
+                                        className="bg-white/5 border-white/10 text-white placeholder:text-slate-400 focus-visible:ring-accent focus-visible:border-accent h-12"
+                                    />
+                                    <Textarea
+                                        name="message"
+                                        placeholder="Your Message..."
+                                        aria-label="Your Message"
+                                        required
+                                        className="bg-white/5 border-white/10 text-white placeholder:text-slate-400 focus-visible:ring-accent focus-visible:border-accent flex-grow resize-none min-h-[150px]"
+                                    />
+                                    <Button type="submit" className="w-full bg-teal-500 hover:bg-teal-400 text-white font-bold h-12 text-lg">Send Message</Button>
+                                </form>
+                            </div>
+                        </GlassSurface>
                     </motion.div>
 
                     <div className="space-y-8">
