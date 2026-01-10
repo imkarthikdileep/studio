@@ -9,16 +9,16 @@ import GradientText from "@/components/GradientText";
 export function Footer() {
   const currentYear = new Date().getFullYear();
   const phoneNumber = "971503860061";
-  const email = "Info@eurostaremc.com";
+  const email = "eurostar014@gmail.com";
 
   return (
-    <footer className="relative z-10 border-t border-white/5">
+    <footer className="relative z-10">
 
       {/* Footer Glass - Mirroring Header Style */}
       <div className="absolute inset-0 w-full h-full pointer-events-none">
         <Card
           variant="glass"
-          className="w-full h-full rounded-none border-0"
+          className="w-full h-full rounded-t-[3rem] border-t border-white/10"
           glass={{
             blur: 12,
             transparency: 0.1,
@@ -33,7 +33,7 @@ export function Footer() {
 
         {/* Left: Logo & Name */}
         <div className="flex items-center gap-2 font-bold text-lg">
-          <Image src="/logo.png" alt="Euro Star Logo" width={60} height={60} className="h-14 w-auto" />
+          <Image src="/logo.png" alt="Euro Star Logo" width={80} height={80} className="h-20 w-auto" />
           <div className="flex flex-col justify-center gap-0.5 group">
             <GradientText
               colors={["#22c55e", "#a855f7", "#22c55e"]}

@@ -37,7 +37,7 @@ export function ContactSection() {
             <div className="container mx-auto px-4 md:px-6">
                 <div className="flex flex-col items-center mb-12 text-center">
                     <SectionTitle text="GET" secondaryText="IN TOUCH" />
-                    <p className="text-lg text-muted-foreground mt-6 max-w-2xl mx-auto font-body">
+                    <p className="text-lg text-slate-700 mt-6 max-w-2xl mx-auto font-body">
                         We're here to help. Contact us for a consultation or any inquiries.
                     </p>
                 </div>
@@ -110,18 +110,18 @@ export function ContactSection() {
                                 <div className="flex items-start gap-4">
                                     <Mail className="h-6 w-6 text-teal-700 mt-1 flex-shrink-0" />
                                     <div className="flex flex-col">
-                                        <Link href="mailto:Info@eurostaremc.com" className="hover:text-accent transition-colors">Info@eurostaremc.com</Link>
-                                        <Link href="mailto:Info@kenzuae.com" className="hover:text-accent transition-colors">Info@kenzuae.com</Link>
-                                        <Link href="mailto:eurostar014@gmail.com" className="hover:text-accent transition-colors">eurostar014@gmail.com</Link>
+                                        <span className="hover:text-accent transition-colors cursor-default">eurostar014@gmail.com</span>
+                                        <span className="hover:text-accent transition-colors cursor-default">Info@kenzuae.com</span>
+                                        <span className="hover:text-accent transition-colors cursor-default">eurostar014@gmail.com</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div className="rounded-lg overflow-hidden shadow-lg border group">
-                            <a href="https://www.google.com/maps/search/?api=1&query=9FV7%2BC5C" target="_blank" rel="noopener noreferrer" className="block relative">
+                            <a href="https://www.google.com/maps/search/?api=1&query=25.393635729180755,55.46285057068588" target="_blank" rel="noopener noreferrer" className="block relative">
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.333857502444!2d55.46039047588326!3d25.32650077762744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2zMjXCsDIzJzM3LjIiTiA1NcKwMjcnNDYuNyJF!5e0!3m2!1sen!2sae!4v1719224484920!5m2!1sen!2sae"
+                                    src="https://maps.google.com/maps?q=25.393635729180755,55.46285057068588&t=&z=15&ie=UTF8&iwloc=&output=embed"
                                     width="100%"
                                     height="450"
                                     style={{ border: 0 }}

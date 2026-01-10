@@ -4,13 +4,14 @@ import { useScroll, useTransform, useSpring, motion, useAnimationFrame } from "f
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import NextImage from "next/image";
 
 const FRAME_COUNT = 103;
 
 export function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [images, setImages] = useState<HTMLImageElement[]>([]);
+  const imagesRef = useRef<HTMLImageElement[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
   // Track scroll progress of the container
@@ -33,43 +34,43 @@ export function HeroSection() {
   // Preload Images
   useEffect(() => {
     const loadImages = async () => {
-      // Check for return visitor cookie
-      const isReturnVisitor = document.cookie.includes('hero_assets_cached=true');
-
-      const loadedImages: HTMLImageElement[] = [];
-      const promises: Promise<void>[] = [];
-
-      for (let i = 0; i < FRAME_COUNT; i++) {
-        const promise = new Promise<void>((resolve) => {
+      // Helper to load a single image
+      const loadSingleImage = (index: number): Promise<HTMLImageElement> => {
+        return new Promise((resolve) => {
           const img = new Image();
-          const frameIndex = i.toString().padStart(3, '0');
+          const frameIndex = index.toString().padStart(3, '0');
           img.src = `/Hero-section-frames/frame_${frameIndex}.png`;
-
-          // If return visitor, we expect cache hit, so we might not need heavy decoding checks blocking UI
-          img.onload = async () => {
-            try {
-              await img.decode();
-            } catch (e) {
-              // Ignore decode errors
-            }
-            loadedImages[i] = img;
-            resolve();
-          };
-
+          img.onload = () => resolve(img);
           img.onerror = () => {
-            console.error(`Failed to load frame ${i}`);
-            resolve();
+            console.error(`Failed to load frame ${index}`);
+            resolve(img); // Resolve anyway to proceed
           };
         });
-        promises.push(promise);
+      };
+
+      try {
+        // 1. Load the first frame immediately to unblock UI
+        const firstImg = await loadSingleImage(0);
+        imagesRef.current[0] = firstImg;
+        setIsLoaded(true);
+
+        // 2. Load the rest in the background
+        const promises: Promise<void>[] = [];
+        for (let i = 1; i < FRAME_COUNT; i++) {
+          // We don't await these individually, nor do we await the whole batch before letting the user interact
+          // We just fire them off and populate the ref as they come in.
+          loadSingleImage(i).then(img => {
+            imagesRef.current[i] = img;
+          });
+        }
+
+        // Optional: We can still set the cookie, though it's less critical now that the internal logic is non-blocking
+        document.cookie = "hero_assets_cached=true; path=/; max-age=" + (60 * 60 * 24 * 7);
+
+      } catch (e) {
+        console.error("Error in loading sequence", e);
+        setIsLoaded(true); // Ensure UI unblocks even on error
       }
-
-      await Promise.all(promises);
-      setImages(loadedImages);
-      setIsLoaded(true);
-
-      // Set cookie to remember assets are cached (7 days)
-      document.cookie = "hero_assets_cached=true; path=/; max-age=" + (60 * 60 * 24 * 7);
     };
 
     loadImages();
@@ -80,7 +81,7 @@ export function HeroSection() {
 
   useAnimationFrame(() => {
     const canvas = canvasRef.current;
-    if (!canvas || !isLoaded || images.length === 0) return;
+    if (!canvas || !isLoaded || imagesRef.current.length === 0) return;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
@@ -99,10 +100,11 @@ export function HeroSection() {
     if (frameIndex === lastFrameIndex.current) {
       return;
     }
-    lastFrameIndex.current = frameIndex;
 
-    const img = images[frameIndex];
+    const img = imagesRef.current[frameIndex];
     if (!img) return;
+
+    lastFrameIndex.current = frameIndex;
 
     // Drawing logic (cover emulation) starts here
     // Optim: Check if canvas size matches window to avoid expensive resets mid-loop if possible, 
@@ -158,12 +160,16 @@ export function HeroSection() {
         {/* Dark Overlay for Text Legibility */}
         <div className="absolute inset-0 z-[1] bg-black/40 pointer-events-none" />
 
-        {/* Loading Indicator */}
-        {!isLoaded && (
-          <div className="absolute inset-0 z-[2] flex items-center justify-center bg-background text-foreground">
-            <span className="animate-pulse text-lg font-mono">Loading Sequence...</span>
-          </div>
-        )}
+        {/* First Frame Placeholder - Visible immediately, hidden when canvas takes over or just sits behind */}
+        <div className={`absolute inset-0 z-0 h-full w-full bg-background ${isLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}>
+          <NextImage
+            src="/Hero-section-frames/frame_000.png"
+            alt="Hero Background"
+            fill
+            priority
+            className="object-cover"
+          />
+        </div>
 
         {/* Content Overlay */}
         <div className="relative z-20 container mx-auto px-4 md:px-6 h-full flex items-center pointer-events-none">

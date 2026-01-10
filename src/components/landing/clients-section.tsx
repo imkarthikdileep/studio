@@ -33,7 +33,7 @@ export function ClientsSection() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 2.0, delay: 2.0 }}
-          className="text-lg text-slate-400 mt-2 max-w-2xl mx-auto font-body mb-12 text-center"
+          className="text-lg text-slate-700 mt-2 max-w-2xl mx-auto font-body mb-12 text-center"
         >
           Proud to partner with industry leaders across the region.
         </motion.p>

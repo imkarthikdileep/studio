@@ -33,7 +33,7 @@ export function CookieConsent() {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 50, opacity: 0 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="fixed bottom-4 left-4 right-4 md:left-8 md:right-auto z-[100] flex justify-center md:block"
+                    className="fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] left-4 right-4 md:left-8 md:right-auto z-[100] flex justify-center md:block"
                 >
                     {/* Frosted Glass Card Container */}
                     <div className="w-full max-w-[300px] min-h-[220px] h-auto bg-white/70 backdrop-blur-xl rounded-lg flex flex-col items-center justify-center p-[20px_30px] gap-[13px] relative overflow-hidden shadow-[2px_2px_20px_rgba(0,0,0,0.062)] border border-white/40 mx-auto">

@@ -6,19 +6,19 @@ import { motion, useSpring, useInView } from "framer-motion";
 
 const stats = [
   {
-    icon: <Calendar className="h-12 w-12 text-accent" />,
+    icon: <Calendar className="h-12 w-12 text-slate-900" />,
     value: 15,
     label: "Years of Experience",
     suffix: "+",
   },
   {
-    icon: <Users className="h-12 w-12 text-accent" />,
+    icon: <Users className="h-12 w-12 text-slate-900" />,
     value: 210,
     label: "Skilled Technicians",
     suffix: "+",
   },
   {
-    icon: <Briefcase className="h-12 w-12 text-accent" />,
+    icon: <Briefcase className="h-12 w-12 text-slate-900" />,
     value: 100,
     label: "Projects Completed",
     suffix: "+",
@@ -72,7 +72,7 @@ export function StatsSection() {
               secondaryText="ACHIEVEMENTS"
               className="mb-6"
             />
-            <p className="text-lg text-slate-300 mt-2 max-w-2xl mx-auto font-body">
+            <p className="text-lg text-slate-700 mt-2 max-w-2xl mx-auto font-body">
               Decades of experience and a track record of success.
             </p>
           </motion.div>
@@ -96,7 +96,7 @@ export function StatsSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/10 p-6 md:p-8 relative z-20">
             {stats.map((stat, index) => (
               <div key={index} className="flex flex-col items-center justify-center p-2">
-                <div className="text-teal-400 mb-3 scale-100">
+                <div className="text-slate-900 mb-3 scale-100">
                   {stat.icon}
                 </div>
                 <div>

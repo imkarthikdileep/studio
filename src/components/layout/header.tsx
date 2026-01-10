@@ -16,7 +16,6 @@ const navLinks = [
   { href: "#services", label: "Services" },
   { href: "#about", label: "About Us" },
   { href: "#clients", label: "Clients" },
-  { href: "#contact", label: "Contact" },
 ];
 
 export function Header() {
@@ -55,7 +54,7 @@ export function Header() {
       <div className={`relative transition-all duration-300 border-b ${isScrolled ? "border-white/5 shadow-md" : "border-transparent"}`}>
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="#" onClick={scrollToTop} className="flex items-center gap-2 font-bold text-lg text-primary z-50 relative">
-            <Image src="/logo.png" alt="Euro Star Logo" width={60} height={60} className="h-14 w-auto" />
+            <Image src="/logo.png" alt="Euro Star Logo" width={80} height={80} className="h-20 w-auto" />
             <div className={`flex flex-col justify-center gap-0.5 group transition-opacity duration-300 ${isScrolled ? "opacity-0" : "opacity-100"}`}>
               <GradientText
                 colors={["#22c55e", "#a855f7", "#22c55e"]}
@@ -88,14 +87,14 @@ export function Header() {
               </Link>
             ))}
             <Button asChild>
-              <Link href="#contact" className="font-inter font-bold">Get a Quote</Link>
+              <Link href="#contact" className="font-inter font-bold tracking-tight text-lg">Contact Us</Link>
             </Button>
           </nav>
           <div className="md:hidden">
             <StaggeredMenu
               items={[
                 ...navLinks.map(l => ({ label: l.label, link: l.href, ariaLabel: l.label })),
-                { label: "Get a Quote", link: "#contact", ariaLabel: "Get a Quote" }
+                { label: "Contact Us", link: "#contact", ariaLabel: "Contact Us" }
               ]}
               position="right"
               isFixed={true}
