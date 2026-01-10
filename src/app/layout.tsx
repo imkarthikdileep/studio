@@ -1,5 +1,6 @@
 import { Montserrat, Lexend, Inter, Outfit, Michroma, Jost } from "next/font/google";
 import type { Metadata } from "next";
+import Script from "next/script";
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from "@/components/ui/toaster";
@@ -43,6 +44,19 @@ export default function RootLayout({
         <CookieConsent />
         <Toaster />
         <Analytics />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-N4FH3QL47G"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-N4FH3QL47G');
+          `}
+        </Script>
       </body>
     </html>
   );
